@@ -2,6 +2,52 @@ document.addEventListener('DOMContentLoaded', () => {
 if(window.location.hash){
    document.body.classList.add("focus-mode");
 }
+/* cleanup if homepage */
+const isHomePage =
+  window.location.pathname.includes("index.html") ||
+  window.location.pathname === "/" ||
+  window.location.pathname.endsWith("/");
+
+if (isHomePage) {
+   document.body.classList.remove("focus-mode");
+
+   const btn = document.querySelector(".focus-close");
+   if (btn) btn.remove();
+}
+//* ----- Practice area focus mode ----- */
+
+ const isPracticePage =
+   window.location.pathname.includes("practice-areas.html");
+
+ if (isPracticePage && window.location.hash) {
+
+     // add blur mode
+     document.body.classList.add("focus-mode");
+
+     // remove old button if exists
+     const existingBtn = document.querySelector(".focus-close");
+     if (existingBtn) existingBtn.remove();
+
+     // create button
+     const closeBtn = document.createElement("button");
+     closeBtn.className = "focus-close";
+     closeBtn.innerHTML = "← View All Practice Areas";
+     document.body.appendChild(closeBtn);
+
+     closeBtn.addEventListener("click", function (e) {
+         e.preventDefault();
+
+         // cleanup current page
+         document.body.classList.remove("focus-mode");
+
+         // remove button
+         closeBtn.remove();
+
+         // HARD redirect (no history weirdness)
+         window.location.href = "./index.html#practice-section";
+     });
+
+ }
   /* ---- BCI Rules disclaimer modal ---- */
   if (!sessionStorage.getItem('bciDisclaimerAccepted')) {
     const overlay = document.createElement('div');

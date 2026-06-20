@@ -16,6 +16,13 @@
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
+.detail-row{
+  scroll-margin-top: 115px;
+}
+.detail-row:target{
+  border:2px solid #C9A86A;
+  background:#faf6ef;
+}
 body{
   margin:0;
   font-family:'Source Sans 3', sans-serif;

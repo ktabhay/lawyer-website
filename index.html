@@ -4,241 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mukund Thakur | Advocate & Legal Consultant</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --maroon-900:#430313;
-    --maroon-800:#5c0d1f;
-    --maroon-700:#6f1227;
-    --maroon-600:#7e1a30;
-    --gold:#cda659;
-    --gold-soft:#e8d4a4;
-    --cream:#fbf8f3;
-    --paper:#f3eee7;
-    --ink:#251316;
-    --ink-soft:#5b4a4d;
-    --line:rgba(67,3,19,0.14);
-    --shadow:0 18px 40px -22px rgba(67,3,19,0.45);
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    font-family:'Source Sans 3', sans-serif;
-    color:var(--ink);
-    background:var(--cream);
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3,.brand-name{font-family:'Playfair Display', serif;}
-  a{text-decoration:none;color:inherit;}
-  img{max-width:100%;display:block;}
-  .container{max-width:1320px;margin:0 auto;padding:0 48px;}
-
-  /* ===== Layout shell: main column + persistent sidebar ===== */
-  .shell{display:grid;grid-template-columns:1fr 320px;}
-  .main-col{min-width:0;}
-  .sidebar{
-    background:var(--maroon-800);
-    color:#f4e9da;
-    background-image:
-      radial-gradient(circle at 15% 20%, rgba(205,166,89,0.06) 0, transparent 45%),
-      repeating-linear-gradient(45deg, rgba(205,166,89,0.045) 0 2px, transparent 2px 26px);
-    padding:48px 36px 40px;
-  }
-
-  /* ===== Header ===== */
-  header{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:18px 48px;
-    background:#fff;
-    border-bottom:1px solid var(--line);
-    position:sticky;top:0;z-index:50;
-  }
-  .logo{display:flex;align-items:center;gap:14px;}
-  .crest{width:50px;height:58px;flex-shrink:0;}
-  .brand-text .brand-name{font-size:25px;font-weight:700;color:var(--maroon-800);line-height:1.1;margin:0;}
-  .brand-text .brand-sub{font-size:11px;letter-spacing:2px;color:var(--ink-soft);font-weight:600;}
-  nav{display:flex;gap:34px;align-items:center;}
-  nav a{font-size:14.5px;font-weight:600;letter-spacing:.4px;color:#3a2226;position:relative;padding:6px 0;}
-  nav a.active{color:var(--maroon-800);}
-  nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--maroon-700);}
-  .btn{
-    display:inline-flex;align-items:center;gap:9px;
-    font-weight:600;font-size:14.5px;letter-spacing:.3px;
-    padding:13px 26px;border-radius:6px;border:1.5px solid transparent;
-    cursor:pointer;transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
-  }
-  .btn svg{width:15px;height:15px;flex-shrink:0;}
-  .btn-solid{background:var(--maroon-700);color:#fff;}
-  .btn-solid:hover{background:var(--maroon-800);transform:translateY(-1px);box-shadow:var(--shadow);}
-  .btn-outline{background:transparent;border-color:rgba(255,255,255,0.55);color:#fff;}
-  .btn-outline:hover{background:rgba(255,255,255,0.12);}
-  .btn-ghost-dark{background:transparent;border-color:var(--maroon-700);color:var(--maroon-800);}
-  .btn-ghost-dark:hover{background:var(--maroon-700);color:#fff;}
-  .header-cta{background:var(--maroon-800);color:#fff;}
-  .header-cta:hover{background:var(--maroon-900);}
-  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
-  .menu-toggle svg{width:26px;height:26px;color:var(--maroon-800);}
-
-  /* ===== Hero ===== */
-  .hero{
-    position:relative;
-    background:linear-gradient(120deg, var(--maroon-900) 0%, var(--maroon-700) 100%);
-    color:#fff;
-    overflow:hidden;
-  }
-  .hero-inner{
-    display:grid;grid-template-columns:1.05fr .95fr;gap:40px;
-    align-items:center;
-    padding:78px 48px 78px;
-  }
-  .eyebrow{
-    display:inline-flex;align-items:center;gap:10px;
-    font-size:12.5px;letter-spacing:3px;font-weight:700;color:var(--gold-soft);
-    margin-bottom:22px;text-transform:uppercase;
-  }
-  .eyebrow::before{content:"";width:30px;height:1px;background:var(--gold);}
-  .hero h1{
-    font-size:51px;line-height:1.14;font-weight:700;margin:0 0 22px;
-    max-width:560px;letter-spacing:.2px;
-  }
-  .hero h1 em{font-style:normal;color:var(--gold-soft);}
-  .hero p{
-    font-size:17px;line-height:1.7;color:rgba(255,255,255,0.82);
-    max-width:480px;margin:0 0 36px;
-  }
-  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
-
-  .hero-art{position:relative;display:flex;justify-content:center;align-items:center;}
-  .hero-art svg{width:100%;max-width:430px;}
-
-  /* ===== Section heading pattern ===== */
-  .section{padding:88px 48px;}
-  .section-head{text-align:center;margin-bottom:54px;}
-  .section-head .tag{
-    font-size:12px;letter-spacing:3px;font-weight:700;color:var(--maroon-700);
-    text-transform:uppercase;margin-bottom:10px;display:block;
-  }
-  .section-head h2{font-size:36px;color:var(--maroon-800);margin:0 0 14px;font-weight:700;}
-  .section-head .rule{width:64px;height:3px;background:var(--gold);margin:0 auto;border-radius:2px;}
-  .section-head.left{text-align:left;}
-  .section-head.left .rule{margin:0;}
-
-  /* ===== Practice areas ===== */
-  .practice-grid{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:26px;
-  }
-  .practice-card{
-    background:#fff;border:1px solid var(--line);border-radius:10px;
-    padding:34px 26px 30px;text-align:center;
-    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
-  }
-  .practice-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent;}
-  .practice-icon{
-    width:58px;height:58px;border-radius:50%;
-    background:linear-gradient(160deg, var(--maroon-700), var(--maroon-900));
-    display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
-  }
-  .practice-icon svg{width:26px;height:26px;color:var(--gold-soft);}
-  .practice-card h3{font-size:18.5px;color:var(--maroon-800);margin:0 0 10px;font-weight:600;}
-  .practice-card p{font-size:14.5px;color:var(--ink-soft);line-height:1.6;margin:0;}
-
-  /* ===== About ===== */
-  .about{background:var(--paper);padding:0;}
-  .about-grid{
-    display:grid;grid-template-columns:.92fr 1.08fr;gap:0;align-items:stretch;
-  }
-  .about-art{
-    background:linear-gradient(160deg,#efe7da,#e3d6c1);
-    display:flex;align-items:center;justify-content:center;padding:50px;
-    min-height:420px;
-  }
-  .about-art svg{width:100%;max-width:330px;}
-  .about-copy{padding:64px 60px;display:flex;flex-direction:column;justify-content:center;}
-  .about-copy .tag{font-size:12px;letter-spacing:3px;font-weight:700;color:var(--maroon-700);text-transform:uppercase;display:block;margin-bottom:10px;}
-  .about-copy h2{font-size:33px;color:var(--maroon-800);margin:0 0 8px;font-weight:700;}
-  .about-copy .rule{width:54px;height:3px;background:var(--gold);border-radius:2px;margin-bottom:22px;}
-  .about-copy p{font-size:15.5px;line-height:1.75;color:var(--ink-soft);max-width:520px;margin:0 0 26px;}
-
-  /* ===== Sidebar contents ===== */
-  .side-heading{
-    font-size:22px;font-weight:700;color:#fff;margin:0 0 18px;letter-spacing:.3px;
-    position:relative;padding-bottom:14px;
-  }
-  .side-heading::after{content:"";position:absolute;left:0;bottom:0;width:46px;height:2px;background:var(--gold);}
-  .side-item{display:flex;gap:14px;margin-bottom:24px;align-items:flex-start;}
-  .side-ico{
-    width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.12);
-    display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;
-  }
-  .side-ico svg{width:16px;height:16px;color:var(--gold-soft);}
-  .side-item .label{font-size:14.5px;line-height:1.6;color:rgba(255,255,255,0.88);}
-  .side-item .label a{color:rgba(255,255,255,0.88);}
-  .side-item .label a:hover{color:var(--gold-soft);}
-  .side-divider{height:1px;background:rgba(255,255,255,0.16);margin:30px 0 26px;}
-  .profile-block{text-align:center;}
-  .profile-block .lbl{font-size:12px;letter-spacing:3px;font-weight:700;color:var(--gold-soft);margin-bottom:16px;}
-  .qr-box{
-    background:#fdfbf6;border-radius:10px;padding:14px;display:inline-block;box-shadow:var(--shadow);
-  }
-  .qr-box svg{width:140px;height:140px;display:block;}
-  .qr-caption{font-size:12px;color:rgba(255,255,255,0.6);margin-top:12px;}
-
-  /* ===== Footer ===== */
-  footer{
-    background:var(--maroon-900);color:rgba(255,255,255,0.78);
-    padding:54px 48px 30px;
-  }
-  .footer-grid{display:grid;grid-template-columns:1.3fr .8fr .8fr 1fr;gap:40px;}
-  .footer-brand{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
-  .footer-brand .crest{width:44px;height:50px;}
-  .footer-brand .brand-name{color:#fff;font-size:21px;margin:0;}
-  .footer-brand .brand-sub{font-size:10.5px;letter-spacing:2px;color:rgba(255,255,255,0.55);font-weight:600;}
-  footer h4{font-size:15px;color:var(--gold-soft);margin:0 0 16px;font-weight:700;letter-spacing:.4px;}
-  footer ul{list-style:none;margin:0;padding:0;}
-  footer li{margin-bottom:11px;font-size:14.5px;}
-  footer li a{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.78);transition:color .18s ease;}
-  footer li a:hover{color:var(--gold-soft);}
-  footer li a svg{width:11px;height:11px;flex-shrink:0;color:var(--gold);}
-  .footer-bottom{
-    margin-top:44px;padding-top:22px;border-top:1px solid rgba(255,255,255,0.12);
-    font-size:13px;color:rgba(255,255,255,0.55);text-align:right;
-  }
-
-  /* ===== Responsive ===== */
-  @media (max-width:1080px){
-    .shell{grid-template-columns:1fr;}
-    .sidebar{order:99;}
-    .hero-inner{grid-template-columns:1fr;}
-    .hero-art{order:-1;max-width:340px;margin:0 auto;}
-    .about-grid{grid-template-columns:1fr;}
-    .about-art{min-height:280px;}
-    .practice-grid{grid-template-columns:repeat(2,1fr);}
-    .footer-grid{grid-template-columns:1fr 1fr;}
-  }
-  @media (max-width:760px){
-    .container{padding:0 22px;}
-    header{padding:16px 20px;}
-    nav{position:fixed;top:0;right:0;height:100vh;width:78%;max-width:320px;
-      background:#fff;flex-direction:column;align-items:flex-start;
-      padding:90px 30px 30px;gap:26px;transform:translateX(100%);
-      transition:transform .3s ease;box-shadow:-10px 0 30px rgba(0,0,0,0.15);
-    }
-    nav.open{transform:translateX(0);}
-    nav .header-cta{margin-top:10px;}
-    .menu-toggle{display:block;}
-    .hero-inner{padding:54px 22px 60px;}
-    .hero h1{font-size:35px;}
-    .section{padding:64px 22px;}
-    .practice-grid{grid-template-columns:1fr;}
-    .about-copy{padding:44px 26px;}
-    .footer-grid{grid-template-columns:1fr;gap:30px;}
-    .footer-bottom{text-align:left;}
-    .sidebar{padding:44px 26px;}
-  }
-  :focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -250,7 +16,7 @@
       <path d="M10 50 C6 53 6 57 10 56 M40 50 C44 53 44 57 40 56" stroke="#5c0d1f" stroke-width="1.6" fill="none"/>
     </svg>
     <div class="brand-text">
-      <p class="brand-name">Mukund Thakur Advocate</p>
+      <p class="brand-name">Mukund Thakur</p>
       <p class="brand-sub">ADVOCATE &amp; LEGAL CONSULTANT</p>
     </div>
   </div>
@@ -258,11 +24,11 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
   </button>
   <nav id="siteNav">
-    <a href="#home" class="active">Home</a>
-    <a href="#about">About</a>
-    <a href="#practice">Practice Areas</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="practice-areas.html">Practice Areas</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
     <a href="tel:+918826507667" class="btn header-cta">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
       Call Now
@@ -274,14 +40,14 @@
   <div class="main-col">
 
     <!-- HERO -->
-    <section class="hero" id="home">
+    <section class="hero">
       <div class="hero-inner">
         <div>
           <span class="eyebrow">ELS Advocates · New Delhi</span>
           <h1>Trusted Legal Solutions.<br>Dedicated to <em>Justice</em>.</h1>
           <p>Professional legal consultation and representation with integrity, dedication and a client-first approach.</p>
           <div class="hero-actions">
-            <a href="#contact" class="btn btn-solid">
+            <a href="contact.html" class="btn btn-solid">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
               Book Consultation
             </a>
@@ -315,8 +81,8 @@
       </div>
     </section>
 
-    <!-- PRACTICE AREAS -->
-    <section class="section" id="practice">
+    <!-- PRACTICE AREAS (preview) -->
+    <section class="section">
       <div class="section-head">
         <span class="tag">What We Do</span>
         <h2>Practice Areas</h2>
@@ -330,6 +96,7 @@
           </div>
           <h3>Civil Litigation</h3>
           <p>Comprehensive support in civil disputes and litigation matters.</p>
+          <a href="practice-areas.html" class="more">Learn more →</a>
         </div>
 
         <div class="practice-card">
@@ -338,6 +105,7 @@
           </div>
           <h3>Property Law</h3>
           <p>Expert advice and representation in property related matters.</p>
+          <a href="practice-areas.html" class="more">Learn more →</a>
         </div>
 
         <div class="practice-card">
@@ -346,6 +114,7 @@
           </div>
           <h3>Criminal Matters</h3>
           <p>Strong defense and legal guidance in criminal proceedings.</p>
+          <a href="practice-areas.html" class="more">Learn more →</a>
         </div>
 
         <div class="practice-card">
@@ -354,13 +123,14 @@
           </div>
           <h3>Corporate Advisory</h3>
           <p>Legal advisory and compliance support for businesses.</p>
+          <a href="practice-areas.html" class="more">Learn more →</a>
         </div>
 
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
+    <!-- ABOUT (teaser) -->
+    <section class="about">
       <div class="about-grid">
         <div class="about-art">
           <svg viewBox="0 0 330 300" xmlns="http://www.w3.org/2000/svg">
@@ -385,46 +155,25 @@
           <h2>Adv. Mukund Thakur</h2>
           <div class="rule"></div>
           <p>Founder of ELS Advocates. With a commitment to excellence and a client-centric approach, we provide effective legal solutions tailored to your unique needs. Our focus is on delivering ethical, practical and result-oriented legal services.</p>
-          <a href="#contact" class="btn btn-solid" style="width:fit-content;">Read More</a>
+          <a href="about.html" class="btn btn-solid" style="width:fit-content;">Read More</a>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES (lightweight, referenced in nav) -->
-    <section class="section" id="services" style="background:var(--paper);">
-      <div class="section-head">
-        <span class="tag">How We Help</span>
-        <h2>Our Services</h2>
-        <div class="rule"></div>
-      </div>
-      <div class="practice-grid">
-        <div class="practice-card">
-          <div class="practice-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></div>
-          <h3>Legal Consultation</h3>
-          <p>One-on-one guidance to understand your rights and options.</p>
-        </div>
-        <div class="practice-card">
-          <div class="practice-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-          <h3>Drafting &amp; Documentation</h3>
-          <p>Contracts, agreements and filings prepared with precision.</p>
-        </div>
-        <div class="practice-card">
-          <div class="practice-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
-          <h3>Court Representation</h3>
-          <p>Dedicated representation before courts and tribunals.</p>
-        </div>
-        <div class="practice-card">
-          <div class="practice-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg></div>
-          <h3>Dispute Resolution</h3>
-          <p>Mediation and negotiation to resolve matters efficiently.</p>
-        </div>
+    <!-- CTA -->
+    <section class="cta-banner">
+      <h2>Need legal advice you can rely on?</h2>
+      <p>Book a consultation today and let's discuss the best path forward for your case.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-solid">Book Consultation</a>
+        <a href="tel:+918826507667" class="btn btn-outline">Call Now</a>
       </div>
     </section>
 
   </div>
 
   <!-- SIDEBAR -->
-  <aside class="sidebar" id="contact">
+  <aside class="sidebar">
     <h3 class="side-heading">Get In Touch</h3>
 
     <div class="side-item">
@@ -503,49 +252,33 @@
     <div>
       <h4>Quick Links</h4>
       <ul>
-        <li><a href="#home"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg>Home</a></li>
-        <li><a href="#about"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg>About</a></li>
-        <li><a href="#practice"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg>Practice Areas</a></li>
+        <li><a href="index.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg>Home</a></li>
+        <li><a href="about.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg>About</a></li>
+        <li><a href="practice-areas.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg>Practice Areas</a></li>
       </ul>
     </div>
 
     <div>
       <h4>&nbsp;</h4>
       <ul>
-        <li><a href="#services"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg>Services</a></li>
-        <li><a href="#contact"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg>Contact</a></li>
+        <li><a href="services.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg>Services</a></li>
+        <li><a href="contact.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg>Contact</a></li>
       </ul>
     </div>
 
     <div>
       <h4>Practice Areas</h4>
       <ul>
-        <li><a href="#practice"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg>Civil Litigation</a></li>
-        <li><a href="#practice"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg>Property Law</a></li>
-        <li><a href="#practice"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg>Criminal Matters</a></li>
-        <li><a href="#practice"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg>Corporate Advisory</a></li>
+        <li><a href="practice-areas.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg>Civil Litigation</a></li>
+        <li><a href="practice-areas.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg>Property Law</a></li>
+        <li><a href="practice-areas.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg>Criminal Matters</a></li>
+        <li><a href="practice-areas.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6"/></svg>Corporate Advisory</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">© <span id="year"></span> ELS Advocates. All Rights Reserved.</div>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  const toggle = document.getElementById('menuToggle');
-  const nav = document.getElementById('siteNav');
-  toggle.addEventListener('click', () => nav.classList.toggle('open'));
-  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
-
-  const links = document.querySelectorAll('nav a[href^="#"]');
-  const sections = [...links].map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
-  const setActive = () => {
-    let current = sections[0];
-    sections.forEach(s => { if (window.scrollY + 120 >= s.offsetTop) current = s; });
-    links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current.id));
-  };
-  window.addEventListener('scroll', setActive);
-  setActive();
-</script>
+<script src="script.js"></script>
 </body>
 </html>

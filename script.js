@@ -14,40 +14,45 @@ if (isHomePage) {
    const btn = document.querySelector(".focus-close");
    if (btn) btn.remove();
 }
-//* ----- Practice area focus mode ----- */
+/* ----- Practice area focus mode ----- */
 
- const isPracticePage =
-   window.location.pathname.includes("practice-areas.html");
+const isPracticePage =
+window.location.pathname.includes("practice-areas.html");
 
- if (isPracticePage && window.location.hash) {
+if (isPracticePage && window.location.hash) {
 
-     // add blur mode
-     document.body.classList.add("focus-mode");
+    document.body.classList.add("focus-mode");
 
-     // remove old button if exists
-     const existingBtn = document.querySelector(".focus-close");
-     if (existingBtn) existingBtn.remove();
+    const existingBtn =
+    document.querySelector(".focus-close");
 
-     // create button
-     const closeBtn = document.createElement("button");
-     closeBtn.className = "focus-close";
-     closeBtn.innerHTML = "← View All Practice Areas";
-     document.body.appendChild(closeBtn);
+    if (existingBtn) existingBtn.remove();
 
-     closeBtn.addEventListener("click", function (e) {
-         e.preventDefault();
+    const closeBtn =
+    document.createElement("button");
 
-         // cleanup current page
-         document.body.classList.remove("focus-mode");
+    closeBtn.className = "focus-close";
 
-         // remove button
-         closeBtn.remove();
+    closeBtn.innerHTML = "Close";
 
-         // HARD redirect (no history weirdness)
-         window.location.href = "./index.html#practice-section";
-     });
+    document.body.appendChild(closeBtn);
 
- }
+    closeBtn.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        document.body.classList.remove("focus-mode");
+
+        closeBtn.remove();
+
+        localStorage.setItem(
+          "scrollPractice",
+          "yes"
+        );
+
+        window.location.href = "./index.html";
+    });
+}
   /* ---- BCI Rules disclaimer modal ---- */
   if (!sessionStorage.getItem('bciDisclaimerAccepted')) {
     const overlay = document.createElement('div');

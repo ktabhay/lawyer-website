@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="disclaimer-modal">
         <div class="disclaimer-icon">⚖️</div>
         <h2 id="disclaimerTitle">Important Disclaimer</h2>
-        <p class="dsub">Bar Council of India Rules, 1962</p>
-        <p class="dtext">As per BCI Rules, advocates &amp; law firms are not permitted to solicit work or advertise. This page is for informational purposes only and does not constitute legal advice or solicitation. By proceeding, you confirm you are seeking information voluntarily and of your own free will, without any inducement from Juris and Justice. No attorney-client relationship is created by accessing this page.</p>
+      <p class="dsub">In compliance with the Bar Council of India Rules,</p>
+        <p class="dtext">Advocates and law firms are prohibited from advertising or soliciting work. The information on this website is provided solely for informational purposes and does not constitute legal advice or solicitation.By accessing this website, you acknowledge that you are seeking information about ELS Advocates ​[a unit of Enlarge Law Solutions​ ("ELS")​] on your own initiative, without any solicitation or inducement. Accessing or using this website does not create an attorney-client relationship.</p>
         <div class="dactions">
           <button type="button" class="btn btn-solid" id="disclaimerAgree">I Understand &amp; Agree</button>
         </div>

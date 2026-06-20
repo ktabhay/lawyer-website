@@ -9,12 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.setAttribute('aria-labelledby', 'disclaimerTitle');
     overlay.innerHTML = `
       <div class="disclaimer-modal">
-        <div class="disclaimer-icon">⚖️</div>
-        <h2 id="disclaimerTitle">Important Disclaimer</h2>
-      <p class="dsub">In compliance with the Bar Council of India Rules,</p>
-        <p class="dtext">Advocates and law firms are prohibited from advertising or soliciting work. The information on this website is provided solely for informational purposes and does not constitute legal advice or solicitation.By accessing this website, you acknowledge that you are seeking information about ELS Advocates ​[a unit of Enlarge Law Solutions​ ("ELS")​] on your own initiative, without any solicitation or inducement. Accessing or using this website does not create an attorney-client relationship.</p>
+        <h2 id="disclaimerTitle">Disclaimer</h2>
+        <p class="dtext">In compliance with the Bar Council of India Rules, advocates and law firms are prohibited from advertising or soliciting work. The information on this website is provided solely for informational purposes and does not constitute legal advice or solicitation.
+                         By accessing this website, you acknowledge that you are seeking information about ELS Advocates ​[a unit of Enlarge Law Solutions​ ("ELS")​] on your own initiative, without any solicitation or inducement. Accessing or using this website does not create an attorney-client relationship.</p>
         <div class="dactions">
-          <button type="button" class="btn btn-solid" id="disclaimerAgree">I Understand &amp; Agree</button>
+          <button type="button" class="btn btn-solid" id="disclaimerAgree">I accept the above to proceed to the website.</button>
         </div>
       </div>`;
     document.body.appendChild(overlay);

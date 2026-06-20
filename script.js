@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+if(window.location.hash){
+   document.body.classList.add("focus-mode");
+}
   /* ---- BCI Rules disclaimer modal ---- */
   if (!sessionStorage.getItem('bciDisclaimerAccepted')) {
     const overlay = document.createElement('div');

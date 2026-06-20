@@ -18,10 +18,21 @@
 html{scroll-behavior:smooth;}
 .detail-row{
   scroll-margin-top: 115px;
+  transition: all 0.4s ease;
 }
-.detail-row:target{
-  border:2px solid #C9A86A;
-  background:#faf6ef;
+
+body.focus-mode .detail-row{
+  opacity: 0.35;
+  filter: blur(2px);
+  transform: scale(0.98);
+}
+
+body.focus-mode .detail-row:target{
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
+  background: #faf6ef;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
 }
 body{
   margin:0;

@@ -130,6 +130,56 @@ nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;heig
 .menu-toggle svg{width:26px;height:26px;color:var(--maroon-800);}
 
 /* ===== Hero (home page) ===== */
+/* ABOUT PAGE NEW */
+
+.about-new{
+    background: var(--paper);
+    padding: 70px 40px;
+    max-width: 1250px;
+    margin: auto;
+}
+
+.about-top-new{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:20px;
+}
+
+.about-image-new img{
+    width:200px !important;
+    height:200px !important;
+    object-fit:cover;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+    border:3px solid #f8f4ef;
+}
+
+.about-content-new h2{
+    color:var(--maroon-800);
+    margin-top:10px;
+}
+
+.about-content-new p{
+    max-width:100% !important;   /* kills old 560px */
+    width:100%;
+    text-align:justify;
+    line-height:1.9;
+    margin-bottom:22px;
+}
+
+@media(max-width:768px){
+
+    .about-top-new{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .about-image-new img{
+        width:160px !important;
+        height:160px !important;
+    }
+}
 .hero{
   position:relative;
   background:linear-gradient(120deg, var(--maroon-900) 0%, var(--maroon-700) 100%);

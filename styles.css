@@ -18,12 +18,27 @@
 html{
   scroll-behavior:smooth;
 }
-
+/* Justify all paragraph text across website */
+p {
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.8;
+    hyphens: auto;
+}
 .detail-row{
   scroll-margin-top:115px;
-  transition:all 0.4s ease;
+  transition: all 0.3s ease;
 }
-
+.detail-row p {
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.8;
+    hyphens: auto;
+}
+.detail-row:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
 /* blur others */
 body.focus-mode .detail-row{
   opacity:0.25;
